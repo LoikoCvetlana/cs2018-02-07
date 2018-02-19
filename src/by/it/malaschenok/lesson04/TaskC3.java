@@ -25,4 +25,22 @@ package by.it.malaschenok.lesson04;
 
 public class TaskC3 {
 
+    public static String digit(int n) {
+        String[] e = {"один", "два", "три", "четыре", "пять", "шесть", "семь", "восемь", "девять", "десять", "одинадцать", "двенадцать", "тринадцать", "четырнадцать", "пятнадцать", "шестнадцать", "семнадцать", "восемнадцать", "девятнадцать"};
+        String[] t = {"-", "двадцать", "тридцать", "сорок", "пятьдесят", "шестьдесят", "семьдесят", "восемьдесят", "девяносто", "сто"};
+        if (n < 20)
+            return e[n - 1];
+
+        else if (n % 10 == 0)
+            return t[n / 10 - 1];
+        else
+            return t[n / 10 - 1] + " " + e[n % 10 - 1];
+    }
+
+    public static void main(String[] args) {
+        for (int i = 2; i <= 10; i++)
+        for (int j = 2; j <= 10; j++)
+        System.out.println( digit(i) + " умножить на " + digit(j) + " равно " + digit(i * j));
+    }
 }
+
